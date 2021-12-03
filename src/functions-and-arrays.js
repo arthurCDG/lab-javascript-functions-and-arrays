@@ -151,7 +151,7 @@ const wordsUnique = [
   'bring'
 ];
 
-/* ----- Tentative compliquée qui a échoué -----
+/* ----- Tentative compliquée qui a échoué (à revoir avec Guillaume, Pauline ou Florian) -----
 
 function uniquifyArray(array) {
 
@@ -179,6 +179,8 @@ function uniquifyArray(array) {
 
 */ 
 
+/* --------- Tentative réussie ----------- */
+
 function uniquifyArray(array) {
 
   let uniquifiedArray = [];
@@ -197,16 +199,20 @@ function uniquifyArray(array) {
 
 }
 
-console.log(uniquifyArray(wordsUnique));
-
 // Iteration #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, element) {
 
+  if (array.length === 0) {
+    return null;
+  } else {
+    return array.includes(element) ? true : false;
+  }
 
+}
 
 // Iteration #7: Count repetition
+
 const wordsCount = [
   'machine',
   'matter',
@@ -221,9 +227,23 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, testedElement) {
 
+  if (array.length === 0) {
+    return 0;
+  } else {
+    let count = 0;
+    for (let element of array) {
+        if (element === testedElement) {
+          count += 1;
+        }
+    }
+    return count;
+  }
 
+}
+
+console.log(howManyTimes(wordsCount, 'matter'));
 
 // Iteration #8: Bonus
 const matrix = [
